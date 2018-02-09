@@ -1,14 +1,16 @@
+require 'corlorize'
 def puts_git(cmd)
-    puts 'git #{cm d} -h'
+    puts `git #{cmd} -h`
 end
 
 def menu 
-    puts '1: Enter git command'
-    puts '2: Exit'
+    puts 'MAIN MEMNU' .colorize(:cyan)
+    puts '1: Enter git command' .colorize(:cyan)
+    puts '2: Exit' .colorize(:cyan)
     choice = gets.to_i
     case choice
     when 1
-        puts 'Entger git command'
+        puts 'Entger git command' .colorize(:green)
         puts_git(gets.strip)
         menu
     when 2 
@@ -18,4 +20,6 @@ def menu
         menu
     end
 end
+
+menu 
     
